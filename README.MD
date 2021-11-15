@@ -10,7 +10,7 @@
   <a href="https://github.com/natanMoutinho" target="_blank"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" target="_blank"></a>
   <a href="" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>  
 </div>
-____________________________________________________________________________________________________________
+_____________________________________________________________________________________________
 <div>
   <p>Esse trabalho visa criar um site que será uma lista de tarefas.</p>
   <p>O Projeto será realizado em HTML, CSS e JavaScript sem a ultilização de bibliotecas ou frameworks.</p> 
