@@ -5,31 +5,39 @@
     <title>Well Organized</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public/css/style.css">
     <link rel="icon" href="./public/assets/favicon.ico">
 </head>
 
 <body>
-    <div>
+    <div class="cabecalho">
         <!--Essa parte aqui vai ser um flex box, por isso coloquei dentro de uma div.Se tivar uma ideia melhor me avise-->
-        <h1>Well Organized</h1>
-        <input type="button" value="A fazer">
-        <input type="button" value="Arquivadas">
+        <!-- Fazer lista-->
+        <h1 class="cabecalho-titulo">Well Organized</h1>
+        <a class="cabecalho-link" href="index.html">A fazer</a>
+        <text class="cabecalho-link"> | </text>
+        <a class="cabecalho-link" href="arquivadas.html">Arquivadas</a>
         <!--Qual a diferença entre o input e o button?-->
     </div>
-    <div>
-        <form>
+    <div class="adicaoTarefa">
+        <form class="formAdd">
             <label for="input-descricao">Descrição</label>
             <input type="text" name="descricao" id="input-descricao">
             <label for="input-cor">Cor</label>
             <!--Quando for aplicado o css cada um vai ter uma cor-->
-            <input type="radio" name="color" value="azul">
-            <input type="radio" name="color" value="verde">
-            <input type="radio" name="color" value="rosa">
-            <input type="radio" name="color" value="roxo">
-            <input type="radio" name="color" value="amarelo">
-            <input type="radio" name="color" value="rose">
-            <input type="radio" name="color" value="branco">
-            <input type="submit" class="Adicionar" value="Adicionar" id="submit-Adicionar"><br>
+            <!-- Fazer com div ou lista-->
+            <div>
+                <ul class="listaCores">
+                    <li id="liAzul"></li>
+                    <li id="liVerde"></li>
+                    <li id="liRosa"></li>
+                    <li id="liRoxo"></li>
+                    <li id="liAmarelo"></li>
+                    <li id="liLarenja"></li>
+                    <li id="liBranco"></li>
+                </ul>
+            </div>
+            <input type="submit" class="btnAdicionar" value="Adicionar" id="submit-Adicionar"><br>
 
         </form>
     </div>
