@@ -1,6 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
 
 
 .cabecalho{
@@ -104,4 +105,55 @@
     border: solid 1px;
     background-color: #ffffff;
     margin-right: 10px; 
+}
+
+.principalNotas{
+    display: flex;
+    margin-left: 10px;
+}
+.notas{
+    margin-top: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 200px;
+    height: 200px;
+    box-shadow: 2px 4px 5px rgba(0,0,0,0.25);
+    background-color:#daf5fa;
+}
+.cabecalhoNota{
+    background-color: #b8ff99;
+    font-family: 'Roboto',regular;
+    font-size:10px;
+}
+.corpoNota{
+    font-family: 'Open Sans',sans-serif;
+    font-size:20px;
+    color: #19b5dc;
+    
+}
+.rodapeNota{
+    margin-top:130px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.notas2{
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 200px;
+    height: 200px;
+    box-shadow: 2px 4px 5px rgba(0,0,0,0.25);
+    background-color:#dcd0f3;
+}
+.cabecalhoNota2{
+    background-color: #ffa4a3;
+    font-family: 'Roboto',regular;
+    font-size:10px;
+}
+.corpoNota2{
+    font-family: 'Open Sans',sans-serif;
+    font-size:20px;
+    color: #9763f9;
+    
 }
