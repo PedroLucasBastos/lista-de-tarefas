@@ -1,20 +1,22 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
 
-
+/*------------- CABEÇALHO --------------------------*/
 .cabecalho{
     display: flex;
     flex-direction: row;
+    align-items: baseline;
     height: 100px;
-    margin-left: 10px;
-    font-family: 'Montserrat', sans-serif;
-    font-size:24px;
+    margin-top: -18px;
+    margin-left: 20px;
+	font-family: 'Montserrat';
 }
 
 .cabecalho-titulo{
-    margin-right: 143px;
+    margin-right: 130px;
+    margin-left: 10px;
+    font-size:32px;
 }
 .cabecalho-link{
    text-decoration: none;
@@ -22,47 +24,133 @@
    margin-left: 7px;
    margin-right: 7px;
    margin-top: 45px;
+   font-size:24px;
 }
 
-
+/*------------------------ ÁREA DA ADIÇÃO DE TAREFAS -------------------------- */
 .formAdd{
     display: flex;
+    flex-direction: row;
+    align-items: center;
+
     max-height: 100px;
-    margin-left: 10px;
+    margin-left: 18px;
     margin-top: 20px;
     font-family:'Montserrat',medium;
     font-size:18px;
     color:#000000;
+    
+    
 }
+.labels{
+    font-family: 'Montserrat', medium;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+#input-descricao{
+    width:490px;
+    height:40px;
+    border-color: #50b6cf;
+    border-radius:7px;
+    margin-right: 20px;
+    text-align: center;
+}
+
 .btnAdicionar{
     font-family:'Roboto',medium;
     font-size: 25px;
     color: #ffffff;
     width:145px;
     height: 40px;
-    background-color: #50b6cf;
-    border-color: #50b6cf;
-    border-radius:7px;
-}
-#input-descricao{
-    width:490px;
-    height:40px;
-    border-color: #50b6cf;
-    border-radius:7px;
+    background-color: #50b6cf; 
+    border-radius: 12px;
+    border: none;
+    font-weight: 500;
 }
 
 
+/*----------------------- CARTÕES DE TAREFAS -------------------------------------*/
+.principalNotas{
+    display: flex;
+    margin-left: 10px;
+}
+
+.rodapeNota{
+    margin-top:130px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+/*------------- Exemplo 1 - Concluído -------------------------------*/
+.cabecalhoNota{
+    background-color: #b8ff99;
+    font-family: 'Roboto',regular;
+    color: #2b5a07;
+    font-size:10px;
+    height: 25px;
+    
+}
+
+.notas{
+    margin-top: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+    width: 200px;
+    height: 200px;
+    box-shadow: 2px 4px 5px rgba(0,0,0,0.25);
+    background-color:#daf5fa;   
+}
+.corpoNota{
+    font-family: 'Open Sans',sans-serif;
+    font-size:20px;
+    color: #19b5dc;
+    text-decoration: line-through;
+    text-decoration-color: #19b5dc;
+}
+
+/*------------- Exemplo 2 Não Concluído -------------------------------*/
+
+.cabecalhoNota2{
+    background-color: #ffa4a3;
+    color:#e42c28;
+    font-family: 'Roboto',regular;
+
+    font-size:10px;
+}
+.notas2{
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 200px;
+    height: 200px;
+    box-shadow: 2px 4px 5px rgba(0,0,0,0.25);
+    background-color:#dcd0f3;
+}
+
+.corpoNota2{
+    font-family: 'Open Sans',sans-serif;
+    font-size:20px;
+    color: #9763f9;
+    
+}
+
+
+
+/*---------------------------- CORES ---------------------------------------------*/
 .listaCores{
-   list-style-type: none; 
-   display: flex;
-   margin-top: 10px;
+    list-style-type: none; 
+    display: flex;
+    margin-top: 20px;
 }
+
 #liAzul{
     width: 20px;
     height: 20px;
     border: solid 1px;
     background-color: #daf5fa;
     margin-right: 10px;
+    margin-left: 0px;
 }
 #liVerde{
     width: 20px;
@@ -104,56 +192,5 @@
     height: 20px;
     border: solid 1px;
     background-color: #ffffff;
-    margin-right: 10px; 
-}
-
-.principalNotas{
-    display: flex;
-    margin-left: 10px;
-}
-.notas{
-    margin-top: 50px;
-    margin-left: 10px;
-    margin-right: 10px;
-    width: 200px;
-    height: 200px;
-    box-shadow: 2px 4px 5px rgba(0,0,0,0.25);
-    background-color:#daf5fa;
-}
-.cabecalhoNota{
-    background-color: #b8ff99;
-    font-family: 'Roboto',regular;
-    font-size:10px;
-}
-.corpoNota{
-    font-family: 'Open Sans',sans-serif;
-    font-size:20px;
-    color: #19b5dc;
-    
-}
-.rodapeNota{
-    margin-top:130px;
-    display: flex;
-    flex-direction: row-reverse;
-}
-
-.notas2{
-    margin-top: 50px;
-    margin-left: 20px;
-    margin-right: 20px;
-    width: 200px;
-    height: 200px;
-    box-shadow: 2px 4px 5px rgba(0,0,0,0.25);
-    background-color:#dcd0f3;
-}
-.cabecalhoNota2{
-    background-color: #ffa4a3;
-    font-family: 'Roboto',regular;
-    font-size:10px;
-}
-.corpoNota2{
-    font-family: 'Open Sans',sans-serif;
-    font-size:20px;
-    color: #9763f9;
-    
+    margin-right: 20px; 
 }
