@@ -14,7 +14,7 @@ ________________________________________________________________________________
 <div>
   <p>Esse trabalho visa criar um site que será uma lista de tarefas.</p>
   <p>O Projeto será realizado em HTML, CSS e JavaScript sem a ultilização de bibliotecas ou frameworks.</p> 
-</div
+</div>
 <div>
   <h3>Protótipo</h3>
   <a href="https://www.figma.com/proto/T1gca6KColDgIXJi1HvTah/Prot%C3%B3tipos---Trabalho-Prog.-Web?node-id=16%3A3899&scaling=min-zoom" target="_blank"><img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" target="_blank"></a>  
