@@ -81,17 +81,32 @@
     display: flex;
     flex-direction: row-reverse;
 }
+
+.itens{
+    margin-left: 8px;
+    display: flex;
+    align-items: center;    
+}
+
+.cabecalhoConcluido{
+    display: flex;    
+}
+.cabecalhoNaoConcluido{
+
+}
+
 /*------------- Exemplo 1 - Concluído -------------------------------*/
-.cabecalhoNota{
+.cabecalhoNota1{
+    display: flex;
     background-color: #b8ff99;
     font-family: 'Roboto',regular;
     color: #2b5a07;
     font-size:10px;
-    height: 25px;
-    
+    height: 30px;
+    align-items: center;    
 }
 
-.notas{
+.notas1{
     margin-top: 50px;
     margin-left: 10px;
     margin-right: 10px;
@@ -101,7 +116,7 @@
     box-shadow: 2px 4px 5px rgba(0,0,0,0.25);
     background-color:#daf5fa;   
 }
-.corpoNota{
+.corpoNota1{
     font-family: 'Open Sans',sans-serif;
     font-size:20px;
     color: #19b5dc;
@@ -115,8 +130,9 @@
     background-color: #ffa4a3;
     color:#e42c28;
     font-family: 'Roboto',regular;
-
     font-size:10px;
+    display: flex;
+    height: 25px;
 }
 .notas2{
     margin-top: 50px;
