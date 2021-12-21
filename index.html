@@ -36,13 +36,16 @@
         <a class="cabecalho-link" href="arquivadas.html">Arquivadas</a>
         <!--Qual a diferença entre o input e o button?-->
     </div>
-    <div class="adicaoTarefa">
+    <div id="btnAddTarefa" onclick="mudarOpcao()">
+        <img src="public/assets/task-add-icon.png">
+        <p>Adicionar Tarefa</p>
+    </div>
+
+    <div id="adicaoTarefa">
         <form class="formAdd">
             <label class="labels">Descrição</label>
             <input type="text" name="descricao" id="input-descricao">
             <label class="labes">Cor</label>
-            <!--Quando for aplicado o css cada um vai ter uma cor-->
-            <!-- Fazer com div ou lista-->
             <div>
                 <ul class="listaCores">
                     <li id="liAzul"></li>
@@ -92,7 +95,7 @@
             </footer>
         </div>
     </main>
-
+    <script src="public/js/index.js"></script>
 </body>
 
 </html>

@@ -29,6 +29,26 @@
 }
 
 /*------------------------ ÁREA DA ADIÇÃO DE TAREFAS -------------------------- */
+#btnAddTarefa{
+    display: flex;
+    max-height: 100px;
+    margin-left: 18px;
+    margin-top: 20px;
+    
+}
+#btnAddTarefa p{
+    font-family: open sans;
+    text-decoration: none;
+    size: 24px;
+    color: #2196F3;
+    margin-left: 10px;
+    line-height:27px;
+    margin-top:15px;
+}
+#adicaoTarefa{
+    display:none;
+}
+
 .formAdd{
     display: flex;
     flex-direction: row;
