@@ -9,7 +9,7 @@ function addNota(btnAdicionar) {
         const novaNota = template.cloneNode(true);
 
         //adiciona nota 
-        novaNota.querySelector(".corpoNota2 p").textContent = descricao;
+        novaNota.querySelector("#corpoNota p").textContent = descricao;
 
         //removendo coisas desnecessarias
         novaNota.classList.remove("template");
@@ -27,7 +27,6 @@ function addNota(btnAdicionar) {
         //concluir tarefa 
         const btnConcluir = novaNota.querySelector(".itens").addEventListener("click", function (e) {
 
-            console.log(status);
             concluirNota(this);
         });
 
@@ -46,9 +45,14 @@ function mudarOpcao(e) {
 }
 
 function concluirNota(nota) {
-    const notaCompleta = nota.parentNode;
+    //aqui é onde ocorre a mudança do cabecalho e do rodapé
+    document.getElementById('btnConcluir').setAttribute("src", "public/assets/checked.png");
+    document.getElementById('status').innerText = "Concluido";
+    document.getElementById('cabecalhoNota').style.color = "#2b5a07";
+    document.getElementById('cabecalhoNota').style.backgroundColor = "#b8ff99";
+    document.getElementById('corpoNota').style.textDecoration = "line-through";
+    document.getElementById('feito').setAttribute("src", "public/assets/archive-color.png")
 
-    notaCompleta.classList.toggle("concluido");
 }
 
 //___________________________________________________________________
@@ -63,34 +67,3 @@ btnAdicionar.addEventListener("click", function (e) {
     }
     addNota(verificaClick);
 })
-
-
-
-
-
-
-
-
-
-
-/*function addNota() {
-
-    const btn = document.querySelector("#submit-Adicionar");
-    btn.addEventListener("click", function (e) {
-        e.preventDefault();
-
-        const inputDescricao = document.querySelector("#input-descricao");
-
-        const value = inputDescricao.value;
-
-        var novaNota = document.createElement("p");
-        var nota = document.createTextNode(value);
-        novaNota.appendChild(nota);
-
-        var notas1 = document.querySelector(".corpoNota1");
-
-        notas1.appendChild(novaNota);
-        console.log(notas1);
-    })
-
-}*/

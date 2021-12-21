@@ -89,6 +89,7 @@
     border-radius: 12px;
     border: none;
     font-weight: 500;
+    cursor: pointer;
 }
 
 
@@ -120,27 +121,6 @@
     cursor: pointer;
 }
 
-.cabecalhoConcluido{
-    font-family: 'Roboto',regular;
-    color: #2b5a07;
-    background-color: #b8ff99;
-    font-size:10px;
-    /*Separação, requisitos acima*/
-    height:25px;
-    display: flex;
-    align-items: center;    
-
-}
-.cabecalhoNaoConcluido{
-    font-family: 'Roboto',regular;
-    background-color: #ffa4a3;
-    color:#e42c28;
-    font-size:10px;
-    /*Separação, requisitos acima*/
-    height: 25px;
-    display: flex;
-    align-items: center;     
-}
 #listaNotas{
     list-style: none;
     display: flex;
@@ -165,6 +145,7 @@
     background-color: #daf5fa;
     margin-right: 10px;
     margin-left: 0px;
+    cursor: pointer;
 }
 #liVerde{
     width: 20px;
@@ -172,13 +153,15 @@
     border: solid 1px;
     background-color: #d1fecb;
     margin-right: 10px; 
+    cursor: pointer;
 }
 #liRosa{
     width: 20px;
     height: 20px;
     border: solid 1px;
     background-color: #f6d0f3;
-    margin-right: 10px; 
+    margin-right: 10px;
+    cursor: pointer; 
 }
 #liRoxo{
     width: 20px;
@@ -186,101 +169,62 @@
     border: solid 1px;
     background-color: #dcd0f3;
     margin-right: 10px; 
+    cursor: pointer;
 }
 #liAmarelo{
     width: 20px;
     height: 20px;
     border: solid 1px;
     background-color: #fcfccb;
-    margin-right: 10px; 
+    margin-right: 10px;
+    cursor: pointer; 
 }
 #liLaranja{
     width: 20px;
     height: 20px;
     border: solid 1px;
     background-color: #fbd4b4;
-    margin-right: 10px; 
+    margin-right: 10px;
+    cursor: pointer; 
 }
 #liBranco{
     width: 20px;
     height: 20px;
     border: solid 1px;
     background-color: #ffffff;
-    margin-right: 20px; 
+    margin-right: 20px;
+    cursor: pointer; 
 }
 
 
 
-/*------------- Exemplo 1 - Concluído -------------------------------*/
-.cabecalhoNota{
+/*------------- template -------------------------------*/
+#cabecalhoNota{
     background-color: #ffa4a3;
-    color:#e42c28;
-    font-family: 'Roboto',regular;
-    font-size:10px;
+    color:#e42c28; 
     display: flex;
     height: 25px;  
+}
+#status{
+    font-family: 'Roboto',regular;
+    font-size:10px;
 }
 
 .notas{
     margin-top: 50px;
     margin-left: 10px;
     margin-right: 10px;
-
     width: 200px;
     height: 200px;
     box-shadow: 2px 4px 5px rgba(0,0,0,0.25);
     background-color:#daf5fa;   
 }
-.corpoNota{
+#corpoNota{
     color: #19b5dc;
 }
-.corpoNota p{
+#corpoNota p{
     font-family: 'Open Sans',sans-serif;
-    text-decoration: line-through;
     text-decoration-color: #19b5dc;
-    font-size:20px;
-    margin-top: 0px;
-    margin-left: 5px;
-}
-.concluido{
-    background-color: #b8ff99;
-    color: #2b5a07;
-    font-family: 'Roboto',regular;
-    font-size:10px;
-    display: flex;
-    height: 25px; 
-      
-}
-
-/*------------- Exemplo 2 Não Concluído -------------------------------*/
-
-.cabecalhoNota2{
-    display: flex;
-    background-color: #b8ff99;
-    font-family: 'Roboto',regular;
-    color: #2b5a07;
-    font-size:10px;
-    height: 25px;
-    align-items: center;  
-}
-.notas2{
-    margin-top: 50px;
-    margin-left: 20px;
-    margin-right: 20px;
-    width: 200px;
-    height: 200px;
-    box-shadow: 2px 4px 5px rgba(0,0,0,0.25);
-    background-color:#dcd0f3;
-}
-
-.corpoNota2{
-    font-family: 'Open Sans',sans-serif;
-    font-size:20px;
-    color: #9763f9;
-    
-}
-.corpoNota2 p{
-    font-family: 'Open Sans',sans-serif;
     font-size:20px;
     margin-top: 0px;
     margin-left: 5px;
