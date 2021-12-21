@@ -19,13 +19,36 @@ function addNota(btnAdicionar) {
         const list = document.querySelector("#listaNotas");
         list.appendChild(novaNota);
 
+
         //volta para o botao anteriores
         btnAddTarefa.style.display = 'flex';
         adicaoTarefa.style.display = 'none';
 
+        //concluir tarefa 
+        const btnConcluir = novaNota.querySelector(".itens").addEventListener("click", function (e) {
+
+            console.log(status);
+            concluirNota(this);
+        });
+
     } if ((descricao == "") && (btnAdicionar == 1)) {
         alert("Não é possivel criar uma nota vazia!");
     }
+}
+
+function mudarOpcao(e) {
+    var btnAddTarefa = document.getElementById('btnAddTarefa');
+    var adicaoTarefa = document.getElementById('adicaoTarefa');
+    if (btnAddTarefa.onclick != true) {
+        btnAddTarefa.style.display = 'none';
+        adicaoTarefa.style.display = 'block';
+    }
+}
+
+function concluirNota(nota) {
+    const notaCompleta = nota.parentNode;
+
+    notaCompleta.classList.toggle("concluido");
 }
 
 //___________________________________________________________________
@@ -43,17 +66,7 @@ btnAdicionar.addEventListener("click", function (e) {
 
 
 
-function mudarOpcao(e) {
-    var btnAddTarefa = document.getElementById('btnAddTarefa');
-    var adicaoTarefa = document.getElementById('adicaoTarefa');
-    if (btnAddTarefa.onclick != true) {
-        btnAddTarefa.style.display = 'none';
-        adicaoTarefa.style.display = 'block';
-    }
-}
-function mudarOpcao2() {
 
-}
 
 
 
