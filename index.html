@@ -42,7 +42,7 @@
     </div>
 
     <div id="adicaoTarefa">
-        <form class="formAdd">
+        <form class="formAdd" onclick="addNota()">
             <label class="labels">Descrição</label>
             <input type="text" name="descricao" id="input-descricao">
             <label class="labes">Cor</label>
@@ -62,39 +62,27 @@
         </form>
     </div>
 
-    <main class="principalNotas">
-        <div class="notas1">
-            <header class="cabecalhoConcluido">
-                <div class="itens">
-                    <img src="public/assets/checked.png">
-                    <p>Concluida</p>
+    <div class="principalNotas">
+        <ul id="listaNotas">
+            <li class="cardsList template hide">
+                <div class="notas2">
+                    <header class="cabecalhoNota">
+                        <div class="itens">
+                            <img src="public/assets/unchecked.png">
+                            <p>Não concluída</p>
+                        </div>
+                    </header>
+                    <main class="corpoNota2">
+                        <p></p>
+                    </main>
+                    <footer class="rodapeNota">
+                        <img class="feito" src="public/assets/archive-color.png">
+                        <img class="apagar" src="public/assets/trash-gray-scale.png">
+                    </footer>
                 </div>
-            </header>
-            <main class="corpoNota1">
-                <p>Fazer café</p>
-            </main>
-            <footer class="rodapeNota">
-                <img src="public/assets/archive-color.png">
-                <img src="public/assets/trash-gray-scale.png">
-            </footer>
-        </div>
-
-        <div class="notas2">
-            <header class="cabecalhoNaoConcluido">
-                <div class="itens">
-                    <img src="public/assets/unchecked.png">
-                    <p>Não concluída</p>
-                </div>
-            </header>
-            <main class="corpoNota2">
-                <p>Teste de nota 2</p>
-            </main>
-            <footer class="rodapeNota">
-                <img src="public/assets/archive-gray-scale.png">
-                <img src="public/assets/trash-gray-scale.png">
-            </footer>
-        </div>
-    </main>
+            </li>
+        </ul>
+    </div>
     <script src="public/js/index.js"></script>
 </body>
 

@@ -75,7 +75,7 @@
     border-color: #50b6cf;
     border-radius:7px;
     margin-right: 20px;
-    text-align: center;
+    
 }
 
 .btnAdicionar{
@@ -93,8 +93,7 @@
 
 /*----------------------- CARTÕES DE TAREFAS -------------------------------------*/
 .principalNotas{
-    display: flex;
-    margin-left: 10px;
+    margin-left: -30px;
 }
 
 .rodapeNota{
@@ -138,7 +137,14 @@
     display: flex;
     align-items: center;     
 }
-
+#listaNotas{
+    list-style: none;
+    display: flex;
+    margin-top: -2px;
+}
+.hide{
+    display: none;
+}
 
 /*---------------------------- CORES ---------------------------------------------*/
 .listaCores{
@@ -202,17 +208,16 @@
 
 
 /*------------- Exemplo 1 - Concluído -------------------------------*/
-.cabecalhoNota1{
-    display: flex;
-    background-color: #b8ff99;
+.cabecalhoNota{
+    background-color: #ffa4a3;
+    color:#e42c28;
     font-family: 'Roboto',regular;
-    color: #2b5a07;
     font-size:10px;
-    height: 30px;
-    align-items: center;    
+    display: flex;
+    height: 25px;  
 }
 
-.notas1{
+.notas{
     margin-top: 50px;
     margin-left: 10px;
     margin-right: 10px;
@@ -222,10 +227,10 @@
     box-shadow: 2px 4px 5px rgba(0,0,0,0.25);
     background-color:#daf5fa;   
 }
-.corpoNota1{
+.corpoNota{
     color: #19b5dc;
 }
-.corpoNota1 p{
+.corpoNota p{
     font-family: 'Open Sans',sans-serif;
     text-decoration: line-through;
     text-decoration-color: #19b5dc;
@@ -237,12 +242,13 @@
 /*------------- Exemplo 2 Não Concluído -------------------------------*/
 
 .cabecalhoNota2{
-    background-color: #ffa4a3;
-    color:#e42c28;
-    font-family: 'Roboto',regular;
-    font-size:10px;
     display: flex;
-    height: 25px;
+    background-color: #b8ff99;
+    font-family: 'Roboto',regular;
+    color: #2b5a07;
+    font-size:10px;
+    height: 30px;
+    align-items: center;  
 }
 .notas2{
     margin-top: 50px;
