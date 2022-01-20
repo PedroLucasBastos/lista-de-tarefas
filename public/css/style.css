@@ -1,3 +1,26 @@
+#seletorDeCores{
+    height: 44px;
+    border: none;
+    overflow: hidden;
+    
+     list-style-type: none; 
+    margin-top: 20px;
+  }
+  #seletorDeCores:focus {
+    outline: none;
+  }
+  #seletorDeCores option{    
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: solid 1px;
+    margin-right: 10px;
+    margin-left: 0px;
+    cursor: pointer;
+  }
+   
+
+
 /*------------- CABEÇALHO --------------------------*/
 .cabecalho{
     display: flex;
@@ -27,29 +50,7 @@
     font-size: 18px;
     margin: 30px;
 }
-
-/*------------------------ ÁREA DA ADIÇÃO DE TAREFAS -------------------------- */
-#btnAddTarefa{
-    display: flex;
-    max-height: 100px;
-    margin-left: 18px;
-    margin-top: 20px;
-    cursor: pointer;
-    
-}
-#btnAddTarefa p{
-    font-family: open sans;
-    text-decoration: none;
-    size: 24px;
-    color: #2196F3;
-    margin-left: 10px;
-    line-height:27px;
-    margin-top:15px;
-}
-#adicaoTarefa{
-    display:none;
-}
-
+/*------------- Formulario de Adicao --------------------------*/
 .formAdd{
     display: flex;
     flex-direction: row;
@@ -61,15 +62,7 @@
     font-family:'Montserrat',medium;
     font-size:18px;
     color:#000000;
-    
-    
 }
-.labels{
-    font-family: 'Montserrat', medium;
-    font-size: 18px;
-    margin-right: 5px;
-}
-
 #input-descricao{
     width:490px;
     height:40px;
@@ -90,142 +83,30 @@
     border: none;
     font-weight: 500;
     cursor: pointer;
+    text-align-last: center;
 }
-
-
-/*----------------------- CARTÕES DE TAREFAS -------------------------------------*/
-.principalNotas{
-    margin-left: -30px;
-}
-
-.rodapeNota{
+/*------------- Botão de adicao --------------------------*/
+#btnAddTarefa{
     display: flex;
-    justify-content: end;
-    margin-top:120px;
-}
-.rodapeNota img{
-    margin-left: 5px;
-    margin-right: 5px;
-}
-
-.itens{
-    margin-left: 8px;
-    display: flex;
-    align-items: center;    
-}
-.itens p{
-    margin-left: 5px;
-    margin-top: 13px;
-}
-.itens img{
-    cursor: pointer;
-}
-
-#listaNotas{
-    list-style: none;
-    display: flex;
-    margin-top: -2px;
-}
-.hide{
-    display: none;
-}
-
-/*---------------------------- CORES ---------------------------------------------*/
-.listaCores{
-    list-style-type: none; 
-    display: flex;
+    max-height: 100px;
+    margin-left: 18px;
     margin-top: 20px;
+    cursor: pointer;
     
 }
-
-#liAzul{
-    width: 20px;
-    height: 20px;
-    border: solid 1px;
-    background-color: #daf5fa;
-    margin-right: 10px;
-    margin-left: 0px;
-    cursor: pointer;
-}
-#liVerde{
-    width: 20px;
-    height: 20px;
-    border: solid 1px;
-    background-color: #d1fecb;
-    margin-right: 10px; 
-    cursor: pointer;
-}
-#liRosa{
-    width: 20px;
-    height: 20px;
-    border: solid 1px;
-    background-color: #f6d0f3;
-    margin-right: 10px;
-    cursor: pointer; 
-}
-#liRoxo{
-    width: 20px;
-    height: 20px;
-    border: solid 1px;
-    background-color: #dcd0f3;
-    margin-right: 10px; 
-    cursor: pointer;
-}
-#liAmarelo{
-    width: 20px;
-    height: 20px;
-    border: solid 1px;
-    background-color: #fcfccb;
-    margin-right: 10px;
-    cursor: pointer; 
-}
-#liLaranja{
-    width: 20px;
-    height: 20px;
-    border: solid 1px;
-    background-color: #fbd4b4;
-    margin-right: 10px;
-    cursor: pointer; 
-}
-#liBranco{
-    width: 20px;
-    height: 20px;
-    border: solid 1px;
-    background-color: #ffffff;
-    margin-right: 20px;
-    cursor: pointer; 
-}
-
-
-
-/*------------- template -------------------------------*/
-#cabecalhoNota{
-    background-color: #ffa4a3;
-    color:#e42c28; 
-    display: flex;
-    height: 25px;  
-}
-#status{
-    font-family: 'Roboto',regular;
-    font-size:10px;
-}
-
-.notas{
-    margin-top: 50px;
+#btnAddTarefa p{
+    font-family: open sans;
+    text-decoration: none;
+    size: 24px;
+    color: #2196F3;
     margin-left: 10px;
-    margin-right: 10px;
-    width: 200px;
-    height: 200px;
-    box-shadow: 2px 4px 5px rgba(0,0,0,0.25);
-    background-color:#daf5fa;   
+    line-height:27px;
+    margin-top:15px;
 }
-#corpoNota{
-    color: #19b5dc;
+/*
+#adicaoTarefa{
+    /*
+    display:none;
+    
 }
-#corpoNota p{
-    font-family: 'Open Sans',sans-serif;
-    text-decoration-color: #19b5dc;
-    font-size:20px;
-    margin-top: 0px;
-    margin-left: 5px;
-}
+*/

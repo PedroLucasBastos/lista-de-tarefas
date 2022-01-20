@@ -1,0 +1,15 @@
+.listaDeCores{
+    list-style-type: none; 
+    display: flex;
+    margin-top: 20px;
+    
+}
+
+/*---------------------------- CORES ---------------------------------------------*/
+.listaCores{
+    list-style-type: none; 
+    display: flex;
+    margin-top: 20px;
+    
+}
+

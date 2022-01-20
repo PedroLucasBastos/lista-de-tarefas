@@ -1,0 +1,64 @@
+/*------------- classes padrao -------------------------------*/
+.principalNotas{
+    margin-left: -30px;
+}
+.cartaoDeTarefa{
+    margin-top: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 200px;
+    height: 200px;
+    box-shadow: 2px 4px 5px rgba(0,0,0,0.25);
+}
+.cabecalhoNota{
+    display: flex;
+    height: 25px;  
+}
+.corpoNota{
+    color: #19b5dc;
+}
+.corpoNota p{
+    font-family: 'Open Sans',sans-serif;
+    text-decoration-color: #19b5dc;
+    font-size:20px;
+    margin-top: 0px;
+    margin-left: 5px;
+    text-decoration: line-through;
+}
+
+.rodapeNota{
+    display: flex;
+    justify-content: end;
+    margin-top:120px;
+}
+.rodapeNota img{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.itens{
+    margin-left: 8px;
+    display: flex;
+    align-items: center;    
+}
+.itens p{
+    margin-left: 5px;
+    margin-top: 13px;
+}
+.itens img{
+    cursor: pointer;
+}
+/*------------- IDs -------------------------------*/
+.status{
+    font-family: 'Roboto',regular;
+    font-size:10px;
+}
+#listaNotas{
+    list-style: none;
+    display: flex;
+    margin-top: -2px;
+}
+.hide{
+    display: none;
+}
+

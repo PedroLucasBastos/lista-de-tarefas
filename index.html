@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="public/css/colors.css">
+    <link rel="stylesheet" href="public/css/cartoes.css">
     <link rel="icon" href="./public/assets/favicon.ico">
 
     <!--Mudei o local de importação das fontes pois percebi que dentro do css não estava funcionando de forma correta-->
@@ -36,43 +38,56 @@
         <a class="cabecalho-link" href="arquivadas.html">Arquivadas</a>
         <!--Qual a diferença entre o input e o button?-->
     </div>
-    <div id="btnAddTarefa" onclick="mudarOpcao()">
-        <img src="public/assets/task-add-icon.png">
-        <p>Adicionar Tarefa</p>
-    </div>
 
     <div id="adicaoTarefa">
-        <form class="formAdd" onclick="addNota()">
+        <form class="formAdd">
             <label class="labels">Descrição</label>
             <input type="text" name="descricao" id="input-descricao">
             <label class="labes">Cor</label>
-            <div>
-                <ul class="listaCores">
-                    <li id="liAzul"></li>
-                    <li id="liVerde"></li>
-                    <li id="liRosa"></li>
-                    <li id="liRoxo"></li>
-                    <li id="liAmarelo"></li>
-                    <li id="liLaranja"></li>
-                    <li id="liBranco"></li>
-                </ul>
-            </div>
-            <input type="submit" class="btnAdicionar" value="Adicionar" id="submit-Adicionar"><br>
+            
+            <select required=true name="work_days" id="seletorDeCores" style="margin-left: 10px;" multiple>
+                <option style='background-color: #daf5fa;'value="1"></option>
+                <option style='background-color: #d1fecb;'value="2"></option>
+                <option style='background-color: #f6d0f3;'value="3"></option>
+                <option style='background-color: #dcd0f3;'value="4"></option>
+                <option style='background-color: #fcfccb;'value="5"></option>
+                <option style='background-color: #fbd4b4;'value="6"></option>
+                <option style='background-color: #ffffff;'value="7"></option>
+              </select>
+            <button onclick='addTarefa()' type='submit' class="btnAdicionar" id="submit-Adicionar" >Adicionar</button>
+            
 
         </form>
     </div>
-
     <div class="principalNotas">
         <ul id="listaNotas">
-            <li class="cardsList template hide">
-                <div class="notas">
-                    <header id="cabecalhoNota">
+        </ul>
+    </div>
+    <!--
+        <div>
+                <ul class="listaDeCores">
+                    <li id="liAzul"    onclick="selecionarCor('0')"></li>
+                    <li id="liVerde"   onclick="selecionarCor('1')"></li>
+                    <li id="liRosa"    onclick="selecionarCor('2')"></li>
+                    <li id="liRoxo"    onclick="selecionarCor('3')"></li>
+                    <li id="liAmarelo" onclick="selecionarCor('4')"></li>
+                    <li id="liLaranja" onclick="selecionarCor('5')"></li>
+                    <li id="liBranco"  onclick="selecionarCor('6')"></li>
+                </ul>
+            </div>
+        onclick=" addNaLista() "
+   <div class="principalNotas">
+        <ul id="listaNotas">
+            <li id="paiDeTodos" class="cardsList template hide">
+                <div id="2" class="cartaoDeTarefa">
+                    <header id="3" class="cabecalhoNota">
                         <div class="itens">
-                            <img id="btnConcluir" src="public/assets/unchecked.png">
+                            <img id="btnConcluir" src="public/assets/unchecked.png" onclick="concluirTarefa()">
+
                             <p id="status">Não concluída</p>
                         </div>
                     </header>
-                    <main id="corpoNota">
+                    <main id="4" class="corpoNota">
                         <p></p>
                     </main>
                     <footer class="rodapeNota">
@@ -83,7 +98,9 @@
             </li>
         </ul>
     </div>
-    <script src="public/js/index.js"></script>
+    -->
+    <script src="public/js/principal/cartoesDeTarefa.js"></script>
+    
 </body>
 
 </html>
