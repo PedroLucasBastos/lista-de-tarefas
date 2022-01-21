@@ -1,7 +1,17 @@
-import {} from 'localStorage.js';
-import {} from 'cartoesDeTarefa';
+class Tarefa {
+    constructor(id_banco,cor_corpo, cor_fonte, finalizado, arquivado, desc) {
+        this.id_banco = id_banco;
+        this.cor_corpo = cor_corpo;
+        this.cor_fonte = cor_fonte;
+        this.finalizado = finalizado;
+        this.arquivado = arquivado;
+        this.descricao = desc;
+    }
+}
 
 var listaDeTarefa = [];
+//====================================================================================
+// criação da nova tarefa
 function addTarefa(){
     const descricao = document.querySelector("#input-descricao").value;
     const select = document.getElementById('seletorDeCores').value;
@@ -14,6 +24,43 @@ function addTarefa(){
     salvarNoStorage();
 
 }
+//===================================================================================
+// Criação do objeto tarefa com todas as especificações 
+function criarObjTarefa(desc,cor){
+    let numero = Math.floor((Math.random() * 100) + 1);
+    const id_banco = ("A"+numero);
+    let cores = selecionarCor(cor);
+    var novaTarefa = new Tarefa(id_banco,cores[0],cores[1],false,false,desc);
+    console.log(novaTarefa);
+    return novaTarefa;
+}
+
+function selecionarCor(str_cor){
+    let listaDeCores = [
+        {id:'1',css_id:'liAzul',cor_corpo:'background-color: #daf5fa',cor_font:'color: #19b5dc'},
+        {id:'2',css_id:'liVerde',cor_corpo:'background-color: #d1fecb',cor_font:'color: #58a51d'},
+        {id:'3',css_id:'liRosa', cor_corpo:'background-color: #f6d0f3',cor_font:'color: #cb65cb'},
+        {id:'4',css_id:'liRoxo', cor_corpo:'background-color: #dcd0f3',cor_font:'color: #9763f9'},
+        {id:'5',css_id:'liAmarelo', cor_corpo:'background-color: #fcfccb',cor_font:'color: #8f8f69'},
+        {id:'6',css_id:'liLaranja', cor_corpo:'background-color: #fbd4b4',cor_font:'color: #ec842e'},
+        {id:'7',css_id:'liBranco', cor_corpo:'background-color: #ffffff',cor_font:'color: #727272'},
+    ]
+    for(let cor of listaDeCores){
+        if(cor.id === str_cor){
+            //console.log(cor.css_id);
+            //console.log(cor.cor_corpo);
+            //console.log(cor.cor_font);
+            return [cor.cor_corpo,cor.cor_font];
+            /*
+                console.log(cor.css_id);
+                document.getElementById('notas').style.backgroundColor = cor.cor;
+                console.log(document.getElementById('notas'));
+             */
+        }
+    }
+}
+//====================================================================================
+// Carregar a lista de tarefas armazenada no local storage e exibir
 function carregarLista(){
     this.listaDeTarefa = carregarStorage();
     //console.log(listaDeTarefa);
@@ -23,6 +70,7 @@ function carregarLista(){
     }
 }
 window.onload = carregarLista();
+
 
 //====================================================================================
 // criação dos cards na página
@@ -77,11 +125,11 @@ function criarHeader(id,finalizado){
     header.appendChild(div);
     //console.log(header);
     return header;   
-}   
+}
 // Texto principal
 function criarMain(finalizado,descricao){
-let main = document.createElement('main');
-let p = document.createElement('p');
+    let main = document.createElement('main');
+    let p = document.createElement('p');
 
     main.setAttribute('id','parteDeTexto');
     main.setAttribute('class','corpoNota');
@@ -128,7 +176,7 @@ function criarFooter(finalizado){
 }
 // Mudar o status do card
 function mudarStatus(id_tarefa){
-    console.log(id_tarefa);
+    
     //console.log(id_tarefa.getAttribute());
     let liPrincipal = document.getElementById(id_tarefa.getAttribute('id'));
     
@@ -175,9 +223,21 @@ function mudarStatus(id_tarefa){
     }
     
 }
+//============================================
+// MANIPULAÇÃO DO LOCAL STORAGE
+function salvarNoStorage(){
+    window.localStorage.setItem('listaDeTarefas', JSON.stringify(this.listaDeTarefa));
+}
 
+function carregarStorage(){
+    let listaDeTarefas = JSON.parse(window.localStorage.getItem('listaDeTarefas') || []);
+    //console.log(listaDeTarefas);
+    return listaDeTarefas;    
+}
+
+
+// outros
 function addNaLista(li){
     const list = document.querySelector("#listaNotas");
     list.appendChild(li); 
 }
-
