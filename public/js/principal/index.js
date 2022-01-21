@@ -24,16 +24,21 @@ function addTarefa(){
     salvarNoStorage();
 
 }
+// Adição da nova li(card) na lista do html
+function addNaLista(li){
+    const list = document.querySelector("#listaNotas");
+    list.appendChild(li); 
+}
 //===================================================================================
 // Criação do objeto tarefa com todas as especificações 
 function criarObjTarefa(desc,cor){
-    let numero = Math.floor((Math.random() * 100) + 1);
-    const id_banco = ("A"+numero);
+    const id_banco = gerarId();
     let cores = selecionarCor(cor);
     var novaTarefa = new Tarefa(id_banco,cores[0],cores[1],false,false,desc);
     console.log(novaTarefa);
     return novaTarefa;
 }
+
 
 function selecionarCor(str_cor){
     let listaDeCores = [
@@ -47,15 +52,7 @@ function selecionarCor(str_cor){
     ]
     for(let cor of listaDeCores){
         if(cor.id === str_cor){
-            //console.log(cor.css_id);
-            //console.log(cor.cor_corpo);
-            //console.log(cor.cor_font);
             return [cor.cor_corpo,cor.cor_font];
-            /*
-                console.log(cor.css_id);
-                document.getElementById('notas').style.backgroundColor = cor.cor;
-                console.log(document.getElementById('notas'));
-             */
         }
     }
 }
@@ -63,15 +60,18 @@ function selecionarCor(str_cor){
 // Carregar a lista de tarefas armazenada no local storage e exibir
 function carregarLista(){
     this.listaDeTarefa = carregarStorage();
-    //console.log(listaDeTarefa);
+    console.log(listaDeTarefa);
     for(tarefaAtual of listaDeTarefa){
-        console.log(tarefaAtual);
-        addNaLista(criarLi(tarefaAtual));
+        if(this.listaDeTarefa === []){
+            console.log(listaDeTarefa);
+            break;
+        } else{
+            addNaLista(criarLi(tarefaAtual));
+            console.log(tarefaAtual);
+        }
     }
 }
 window.onload = carregarLista();
-
-
 //====================================================================================
 // criação dos cards na página
 function criarLi(objTarefa){
@@ -86,7 +86,7 @@ function criarLi(objTarefa){
     div.appendChild(criarHeader(objTarefa.id_banco,objTarefa.finalizado));
     //console.log(objTarefa.id_banco);
     div.appendChild(criarMain(objTarefa.finalizado,objTarefa.descricao));
-    div.appendChild(criarFooter(objTarefa.finalizado));
+    div.appendChild(criarFooter(objTarefa.id_banco,objTarefa.finalizado));
     
     li.appendChild(div);
     return li;
@@ -111,9 +111,7 @@ function criarHeader(id,finalizado){
         img.setAttribute("src", "public/assets/checked.png");
         p.innerText = "Concluido";
     }
-    
     div.setAttribute('class','itens');
-
     img.setAttribute('class','btnConcluir');
     img.setAttribute('onclick','mudarStatus('+id+')');
 
@@ -123,7 +121,6 @@ function criarHeader(id,finalizado){
     div.appendChild(p);
 
     header.appendChild(div);
-    //console.log(header);
     return header;   
 }
 // Texto principal
@@ -146,84 +143,88 @@ function criarMain(finalizado,descricao){
     return main;
 }
 // Rodapé
-function criarFooter(finalizado){
+function criarFooter(id,finalizado){
     let footer = document.createElement('footer');
-    let img1 = document.createElement('img');
-    let img2 = document.createElement('img');
+    let imgArquivar = document.createElement('img');
+    let imgApagar = document.createElement('img');
 
     footer.setAttribute('class','rodapeNota');
-    img1.setAttribute('class','feito');
-    img2.setAttribute('class','apagar');
+    imgArquivar.setAttribute('class','feito');
+    imgApagar.setAttribute('class','apagar');
 
 
-    img1.setAttribute('id','feito');
-    img2.setAttribute('id','apagar');
+    imgArquivar.setAttribute('id','feito');
+    imgApagar.setAttribute('id','apagar');
 
     if(finalizado === false){
-        img1.setAttribute('src','public/assets/archive-gray-scale.png');
-        img2.setAttribute('src','public/assets/trash-gray-scale.png');
+        // Tarefa não finalizada
+        imgArquivar.setAttribute('src','public/assets/archive-gray-scale.png');
+        imgApagar.setAttribute('src','public/assets/trash-gray-scale.png');
+        imgApagar.setAttribute('onclick','');
     
     }else{
-        img1.setAttribute('src','public/assets/archive-color.png');
-        img2.setAttribute('src','public/assets/trash-color.png');
+        // Tarefa finalizada
+        imgArquivar.setAttribute('src','public/assets/archive-color.png');
+        imgApagar.setAttribute('src','public/assets/trash-color.png');
+        imgApagar.setAttribute('onclick','apagarNoStorage('+id+')');
+        imgApagar.setAttribute('type','submit');
     }
     
 
-    footer.appendChild(img1);
-    footer.appendChild(img2);
+    footer.appendChild(imgArquivar);
+    footer.appendChild(imgApagar);
 
     return footer;
 }
 // Mudar o status do card
-function mudarStatus(id_tarefa){
-    
-    //console.log(id_tarefa.getAttribute());
-    let liPrincipal = document.getElementById(id_tarefa.getAttribute('id'));
-    
+function mudarStatus(tarefa){
+    let id = tarefa.getAttribute('id');
+    let liPrincipal = document.getElementById(id);
     let header = liPrincipal.getElementsByClassName('cabecalhoNota')[0];
-    //console.log(header);
     let status = liPrincipal.getElementsByClassName('status')[0];
     let img = liPrincipal.getElementsByClassName('btnConcluir')[0];
-    let imgFeito = liPrincipal.getElementsByClassName('feito')[0];
+    let imgArquivar = liPrincipal.getElementsByClassName('feito')[0];
     let imgApagar = liPrincipal.getElementsByClassName('apagar')[0];
     let lblDesc = liPrincipal.getElementsByClassName('lblDescricao')[0];
-    
-    let tarefa;
-    var posicao=0;
+    var cont=0;
     for(tarefaAtual of listaDeTarefa){
-        if(id_tarefa.getAttribute('id') === tarefaAtual.id_banco){
-            tarefa = tarefaAtual;
+        if(tarefa.getAttribute('id') === tarefaAtual.id_banco){
+            if(tarefaAtual.finalizado === false){
+                header.style.backgroundColor='#b8ff99';
+                header.style.color = "#2b5a07";
+                status.innerText = "Concluido";
+
+                img.setAttribute("src", "public/assets/checked.png");
+                imgArquivar.setAttribute('src','public/assets/archive-color.png');
+                imgApagar.setAttribute('src','public/assets/trash-color.png');
+                imgApagar.setAttribute('onclick','apagarNoStorage('+id+')');
+                lblDesc.setAttribute('style','text-decoration: line-through');
+
+                tarefaAtual.finalizado = true;
+                this.listaDeTarefa[cont] = tarefaAtual;
+                salvarNoStorage();
+            } else{
+                header.style.backgroundColor='#ffa4a3';
+                header.style.color = "#e42c28";
+                status.innerText = "Não concluido";
+
+                img.setAttribute("src", "public/assets/unchecked.png");
+                imgArquivar.setAttribute('src','public/assets/archive-gray-scale.png');
+                imgApagar.setAttribute('src','public/assets/trash-gray-scale.png');
+                imgApagar.setAttribute('onclick','');
+
+                lblDesc.setAttribute('style','text-decoration: none')
+                
+                tarefaAtual.finalizado = false;
+                this.listaDeTarefa[cont] = tarefaAtual;
+                salvarNoStorage();
+            }
             break;
         }
-        posicao +=1;
+        cont +=1;
     }
-    if(tarefa.finalizado === false){
-        header.style.backgroundColor='#b8ff99';
-        header.style.color = "#2b5a07";
-        status.innerText = "Concluido";
-        img.setAttribute("src", "public/assets/checked.png");
-        imgFeito.setAttribute('src','public/assets/archive-color.png');
-        imgApagar.setAttribute('src','public/assets/trash-color.png');
-        lblDesc.setAttribute('style','text-decoration: line-through')
-        tarefa.finalizado = true;
-        this.listaDeTarefa[posicao] = tarefa;
-        salvarNoStorage();
-    } else{
-        header.style.backgroundColor='#ffa4a3';
-        header.style.color = "#e42c28";
-        status.innerText = "Não concluido";
-        img.setAttribute("src", "public/assets/unchecked.png");
-        imgFeito.setAttribute('src','public/assets/archive-gray-scale.png');
-        imgApagar.setAttribute('src','public/assets/trash-gray-scale.png');
-        lblDesc.setAttribute('style','text-decoration: none')
-        tarefa.finalizado = false;
-        this.listaDeTarefa[posicao] = tarefa;
-        img.setAttribute('src','public/assets/unchecked.png');
-        salvarNoStorage();
-    }
-    
 }
-//============================================
+//====================================================================================================
 // MANIPULAÇÃO DO LOCAL STORAGE
 function salvarNoStorage(){
     window.localStorage.setItem('listaDeTarefas', JSON.stringify(this.listaDeTarefa));
@@ -234,10 +235,32 @@ function carregarStorage(){
     //console.log(listaDeTarefas);
     return listaDeTarefas;    
 }
-
-
-// outros
-function addNaLista(li){
-    const list = document.querySelector("#listaNotas");
-    list.appendChild(li); 
+function apagarNoStorage(tarefa){
+    let id = tarefa.getAttribute('id');
+    console.log(id);
+    let cont=0;
+    let auxTarefa;
+    for (tarefaAtual of listaDeTarefa){
+        if(tarefaAtual.id_banco === id){
+            auxTarefa = listaDeTarefa.splice(cont,1);
+            localStorage.clear();
+            salvarNoStorage();
+            document.location.reload(false);
+            console.log(listaDeTarefa);
+        }
+        cont +=1;
+    }
+    //carregarLista();
+}
+//============================================
+// Funções genéricas para melhorar o fluxo do código
+function gerarId(){
+    let idGerado = Math.floor((Math.random() * 1000) + 1);
+    for(let i =0; i<100;i++){
+        if(idGerado !== listaDeTarefa[i]){
+            return 'A'+idGerado;
+        } else{
+            idGerado = Math.floor((Math.random() * 1000) + 1);
+        }
+    }
 }
