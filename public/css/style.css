@@ -18,7 +18,12 @@
     margin-left: 0px;
     cursor: pointer;
   }
-   
+  #labels{
+    font-family: 'Montserrat', medium;
+    font-size: 18px;
+    margin-right: 100px;
+    font-weight: normal;
+}
 
 
 /*------------- CABEÇALHO --------------------------*/
@@ -30,12 +35,14 @@
     margin-top: -18px;
     margin-left: 20px;
 	font-family: 'Montserrat';
+
 }
 
 .cabecalho-titulo{
     margin-right: 130px;
     margin-left: 10px;
     font-size:32px;
+    
 }
 .cabecalho-link{
    text-decoration: none;
@@ -62,6 +69,8 @@
     font-family:'Montserrat',medium;
     font-size:18px;
     color:#000000;
+    font-weight: 600;
+    text-shadow: none;
 }
 #input-descricao{
     width:490px;
@@ -103,10 +112,3 @@
     line-height:27px;
     margin-top:15px;
 }
-/*
-#adicaoTarefa{
-    /*
-    display:none;
-    
-}
-*/
