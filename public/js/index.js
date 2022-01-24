@@ -8,7 +8,6 @@ class Tarefa {
         this.descricao = desc;
     }
 }
-
 var listaDeTarefa = [];
 let btnAddTarefa = document.getElementById('submit-Adicionar');
 let btnAdicao = document.getElementById('btnAdicao');
@@ -32,7 +31,6 @@ btnAddTarefa.addEventListener('click', function (e) {
     }
 });
 btnAdicao.addEventListener('click', function (e) {
-    console.log(adicaoTarefa);
     adicaoTarefa.style.display = 'block';
     btnAdicao.style.display = 'none';
 });
@@ -60,16 +58,22 @@ function addNaListaHtml(li) {
     list.appendChild(li);
 }
 function carregarListaStorage() {
-    this.listaDeTarefa = carregarStorage();
-    for (tarefaAtual of listaDeTarefa) {
-        if (this.listaDeTarefa === []) {
-            break;
-        } else {
-            if (tarefaAtual.arquivado === false) {
-                addNaListaHtml(criarLi(tarefaAtual));
+    listaDeTarefa = carregarStorage();
+    if(listaDeTarefa !== null){
+        for (tarefaAtual of listaDeTarefa) {
+            if (this.listaDeTarefa === []) {
+                break;
+            } else {
+                if (tarefaAtual.arquivado === false) {
+                    addNaListaHtml(criarLi(tarefaAtual));
+                }
             }
         }
-    }
+    } else{
+        listaDeTarefa = [];
+        salvarNoStorage();
+        //document.location.reload(true);
+    } 
 }
 function apagarTarefa(tarefa) {
     let id = tarefa.getAttribute('id');
@@ -263,11 +267,11 @@ function mudarcorStatus(id, finalizado) {
 //====================================================================================================
 // MANIPULAÇÃO DO LOCAL STORAGE
 function salvarNoStorage() {
-    window.localStorage.setItem('listaDeTarefas', JSON.stringify(this.listaDeTarefa));
+    window.localStorage.setItem('listaDeTarefas', JSON.stringify(listaDeTarefa));
 }
 
 function carregarStorage() {
-    let listaDeTarefas = JSON.parse(window.localStorage.getItem('listaDeTarefas') || []);
+    let listaDeTarefas = JSON.parse(window.localStorage.getItem('listaDeTarefas'));
     return listaDeTarefas;
 }
 //============================================
