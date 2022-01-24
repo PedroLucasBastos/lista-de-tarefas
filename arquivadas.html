@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="public/css/colors.css">
+    <link rel="stylesheet" href="public/css/cartoes.css">
     <link rel="icon" href="./public/assets/favicon.ico">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,15 +31,18 @@
 
 <body>
     <div class="cabecalho">
-        <!--Essa parte aqui vai ser um flex box, por isso coloquei dentro de uma div.Se tivar uma ideia melhor me avise-->
-        <!-- Fazer lista-->
         <h1 class="cabecalho-titulo">Well Organized</h1>
         <a class="cabecalho-link" href="index.html">A fazer</a>
         <text class="cabecalho-link"> | </text>
         <a class="cabecalho-link" href="arquivadas.html">Arquivadas</a>
-        <!--Qual a diferença entre o input e o button?-->
     </div>
     <div class="arquivadas">
         <p>TAREFAS ARQUIVADAS</p>
-    </div>
+    </div>    
+        <div class="principalNotas">
+            <ul id="listaNotas">
+            </ul>
+        </div>
+    
+    <script src="public/js/arquivadas.js"></script>
 </body>

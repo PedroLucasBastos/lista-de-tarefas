@@ -17,14 +17,18 @@
 .corpoNota p{
     font-family: 'Open Sans',sans-serif;
     font-size:20px;
-    margin-top: 0px;
+    margin-top: 10px;
     margin-left: 5px;
+    margin-bottom: 0px;
 }
 
 .rodapeNota{
     display: flex;
     justify-content: end;
-    margin-top:120px;
+    /*
+    margin-top: 120px;
+    */
+
 }
 .rodapeNota img{
     margin-left: 5px;
@@ -39,9 +43,16 @@
 .itens p{
     margin-left: 5px;
     margin-top: 13px;
+    
 }
 .itens img{
     cursor: pointer;
+}
+.lblDescricao{
+    width: 195px;
+    height: 139px;
+    overflow: auto;
+    word-break: break-word;
 }
 /*------------- IDs -------------------------------*/
 .status{

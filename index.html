@@ -30,13 +30,14 @@
 
 <body>
     <div class="cabecalho">
-        <!--Essa parte aqui vai ser um flex box,por isso coloquei dentro de uma div.Se tivar uma ideia melhor me avise-->
-        <!-- Fazer lista-->
         <h1 class="cabecalho-titulo">Well Organized</h1>
         <a class="cabecalho-link" href="index.html">A fazer</a>
         <text class="cabecalho-link"> | </text>
         <a class="cabecalho-link" href="arquivadas.html">Arquivadas</a>
-        <!--Qual a diferença entre o input e o button?-->
+    </div>
+    <div id="btnAdicao">
+        <img src="public/assets/task-add-icon.png">
+        <p>Adicionar Tarefa</p>
     </div>
     <div id="adicaoTarefa">
         <form class="formAdd">
@@ -53,7 +54,7 @@
                 <option style='background-color: #fbd4b4;' value="6"></option>
                 <option style='background-color: #ffffff;' value="7"></option>
             </select>
-            <button onclick='addTarefa()' type='submit' class="btnAdicionar" id="submit-Adicionar">Adicionar</button>
+            <button  type='submit' class="btnAdicionar" id="submit-Adicionar">Adicionar</button>
 
 
         </form>
@@ -62,7 +63,7 @@
         <ul id="listaNotas">
         </ul>
     </div>
-    <script src="public/js/principal/index.js"></script>
+    <script src="public/js/index.js"></script>
 </body>
 
 </html>

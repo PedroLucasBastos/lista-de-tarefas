@@ -1,31 +1,12 @@
-#seletorDeCores{
-    height: 44px;
-    border: none;
-    overflow: hidden;
-    
-     list-style-type: none; 
-    margin-top: 20px;
-  }
-  #seletorDeCores:focus {
-    outline: none;
-  }
-  #seletorDeCores option{    
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    border: solid 1px;
-    margin-right: 10px;
-    margin-left: 0px;
-    cursor: pointer;
-  }
-  #labels{
+#labels{
     font-family: 'Montserrat', medium;
     font-size: 18px;
     margin-right: 100px;
     font-weight: normal;
 }
-
-
+#adicaoTarefa{
+    display:none;
+}
 /*------------- CABEÇALHO --------------------------*/
 .cabecalho{
     display: flex;
@@ -57,6 +38,29 @@
     font-size: 18px;
     margin: 30px;
 }
+/* ------------ Seletor de cores ------------------------------*/
+#seletorDeCores{
+    height: 44px;
+    border: none;
+    overflow: hidden;
+    
+     list-style-type: none; 
+    margin-top: 20px;
+  }
+  #seletorDeCores:focus {
+    outline: none;
+  }
+  #seletorDeCores option{    
+    display: inline-block;
+    
+    width: 20px;
+    height: 20px;
+    
+    border: solid 1px;
+    margin-right: 10px;
+    margin-left: 0px;
+    cursor: pointer;
+  }
 /*------------- Formulario de Adicao --------------------------*/
 .formAdd{
     display: flex;
@@ -77,6 +81,7 @@
     height:40px;
     border-color: #50b6cf;
     border-radius:7px;
+    margin-left: 10px;
     margin-right: 20px;
     
 }
@@ -95,7 +100,7 @@
     text-align-last: center;
 }
 /*------------- Botão de adicao --------------------------*/
-#btnAddTarefa{
+#btnAdicao{
     display: flex;
     max-height: 100px;
     margin-left: 18px;
@@ -103,7 +108,7 @@
     cursor: pointer;
     
 }
-#btnAddTarefa p{
+#btnAdicao p{
     font-family: open sans;
     text-decoration: none;
     size: 24px;
@@ -111,4 +116,5 @@
     margin-left: 10px;
     line-height:27px;
     margin-top:15px;
+    font-size: larger;
 }
